@@ -8,29 +8,36 @@ def main():
         3: Container("5 Liter Container", 40),
     }
 
-    print("=== Water Refilling Vendo ===")
-    for choice, container in containers.items():
-        print(f"{choice}. {container.name} - P{container.price}")
-    print("==============================")
+    while True:
+        print("=== Water Refilling Vendo ===")
+        for choice, container in containers.items():
+            print(f"{choice}. {container.name} - P{container.price}")
+        print("0. Exit")
+        print("==============================")
 
-    try:
-        choice = int(input("Enter choice: "))
-    except ValueError:
-        print("Invalid selection.")
-        return
+        try:
+            choice = int(input("Enter choice: "))
+        except ValueError:
+            print("Invalid selection.")
+            continue
 
-    if choice not in containers:
-        print("Invalid selection.")
-        return
+        if choice == 0:
+            print("Thank you for using the Water Refilling Vendo!")
+            break
 
-    try:
-        amount = int(input("Enter payment: "))
-    except ValueError:
-        print("Invalid payment.")
-        return
+        if choice not in containers:
+            print("Invalid selection.")
+            continue
 
-    container = containers[choice]
-    container.transaction(amount)
+        try:
+            amount = int(input("Enter payment: "))
+        except ValueError:
+            print("Invalid payment.")
+            continue
+
+        container = containers[choice]
+        container.transaction(amount)
+        print()  # blank line to separate transactions
 
 
 if __name__ == "__main__":
