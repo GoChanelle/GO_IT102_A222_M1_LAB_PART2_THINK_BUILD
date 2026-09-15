@@ -7,9 +7,11 @@ def main():
         2: Container("1 Liter Bottle", 15),
         3: Container("5 Liter Container", 40),
     }
+    print("==============================")
+
 
     while True:
-        print("=== Water Refilling Vendo ===")
+        print("--- Water Refilling Vendo ---")
         for choice, container in containers.items():
             print(f"{choice}. {container.name} - P{container.price}")
         print("0. Exit")
@@ -22,7 +24,7 @@ def main():
             continue
 
         if choice == 0:
-            print("Thank you for using the Water Refilling Vendo!")
+            print("Thank you for running!")
             break
 
         if choice not in containers:
