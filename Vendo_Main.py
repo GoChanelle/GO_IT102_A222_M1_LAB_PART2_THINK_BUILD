@@ -1,5 +1,6 @@
 from Vendo_Price import Container
 
+
 def main():
     containers = {
         1: Container("500 mL Bottle", 10),
@@ -7,9 +8,10 @@ def main():
         3: Container("5 Liter Container", 40),
     }
 
-    print("WATER REFILLING VENDO")
+    print("=== Water Refilling Vendo ===")
     for choice, container in containers.items():
         print(f"{choice}. {container.name} - P{container.price}")
+    print("==============================")
 
     try:
         choice = int(input("Enter choice: "))
@@ -26,10 +28,10 @@ def main():
     except ValueError:
         print("Invalid payment.")
         return
- 
+
     container = containers[choice]
     container.transaction(amount)
- 
- 
+
+
 if __name__ == "__main__":
     main()
