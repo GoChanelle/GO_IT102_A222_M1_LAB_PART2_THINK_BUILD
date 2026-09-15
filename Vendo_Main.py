@@ -1,4 +1,4 @@
-from Vendo_Main import Container
+from Vendo_Price import Container
 
 def main():
     containers = {
