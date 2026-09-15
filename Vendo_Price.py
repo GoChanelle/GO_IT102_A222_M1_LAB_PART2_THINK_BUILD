@@ -8,14 +8,15 @@ class Container:
         print("Container:",self.name)
         print("Price:",self.price)
 
-    def transaction(self, price, amount):
+    def transaction(self, amount):
         if amount < self.price:
-            print("Insufficient Payment!")
-
-            self.displayContainers()
-            change = amount - self.price
-            print("Change: P" + str(change))
-            self.displayChange(change)
+            print("Insufficient payment.")
+            return
+ 
+        self.displayContainers()
+        change = amount - self.price
+        print("Change: P" + str(change))
+        self.displayChange(change)
 
     def displayChange(self, change):
         denominations = [20, 10, 5, 1]
