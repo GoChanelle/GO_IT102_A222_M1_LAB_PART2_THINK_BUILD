@@ -39,7 +39,7 @@ def main():
 
         container = containers[choice]
         container.transaction(amount)
-        print()  # blank line to separate transactions
+        print()
 
 
 if __name__ == "__main__":
